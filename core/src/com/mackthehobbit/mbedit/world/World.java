@@ -22,6 +22,8 @@ import com.mackthehobbit.mbedit.util.Render;
 
 public class World {
 	
+	public static final int VIEW_DISTANCE = 4;
+	
 	private long seed, gameMode;
 	private String biomesXml;
 	public Point spawn;
