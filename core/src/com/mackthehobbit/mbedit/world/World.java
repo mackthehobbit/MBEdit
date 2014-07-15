@@ -52,8 +52,16 @@ public class World {
 		Render.chunksShader.setUniformMatrix("u_projTrans", cam.combined);
 		Render.chunksShader.setUniformi("u_texture", 0);
 		
-		for(Chunk chunk : loadedChunks.values()) {
-			chunk.chunkMesh.render(Render.chunksShader, GL20.GL_TRIANGLES, 0, chunk.vertices);
+		int cameraChunkX = ((int) control.x & 0xF);
+		int cameraChunkY = ((int) control.y & 0xF);
+		int cameraChunkZ = ((int) control.z & 0xF);
+		
+		for(int x = cameraChunkX - VIEW_DISTANCE; x <= cameraChunkX + VIEW_DISTANCE; x++) {
+			for(int y = cameraChunkY - VIEW_DISTANCE; y <= cameraChunkY + VIEW_DISTANCE; y++) {
+				for(int z = cameraChunkZ - VIEW_DISTANCE; z <= cameraChunkZ + VIEW_DISTANCE; z++) {
+					
+				}
+			}
 		}
 		
 		Render.chunksShader.end();

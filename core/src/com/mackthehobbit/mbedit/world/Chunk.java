@@ -78,6 +78,10 @@ public class Chunk {
 		}
 	}
 	
+	public void finalize() {
+		this.chunkMesh.dispose();
+	}
+	
 	public void save(DataOutputStream stream) throws IOException {
 		stream.writeInt(position.x);
 		stream.writeInt(position.y);
